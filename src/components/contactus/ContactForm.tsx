@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import ReCAPTCHA from 'react-google-recaptcha'
 
-const apiUrl = 'http://localhost:3000/api/dv8contact_us'
+const apiUrl = 'https://email-service-lemon.vercel.app/api/dv8contact_us'
 
 const ContactForm = () => {
   const [formData, setFormData] = useState({
@@ -106,6 +106,42 @@ const ContactForm = () => {
               type='email'
               onChange={handleChange}
               value={formData.email}
+              className='w-full p-2 border border-gray-300 rounded focus:ring-2 focus:ring-blue-600'
+              required
+            />
+          </div>
+
+          <div>
+            <label
+              htmlFor='email'
+              className='block text-sm font-medium text-gray-700 mb-1'
+            >
+              Phone
+            </label>
+            <input
+              id='phone'
+              name='phone'
+              type='text'
+              onChange={handleChange}
+              value={formData.phone}
+              className='w-full p-2 border border-gray-300 rounded focus:ring-2 focus:ring-blue-600'
+              required
+            />
+          </div>
+
+          <div>
+            <label
+              htmlFor='email'
+              className='block text-sm font-medium text-gray-700 mb-1'
+            >
+              Company
+            </label>
+            <input
+              id='company'
+              name='company'
+              type='text'
+              onChange={handleChange}
+              value={formData.company}
               className='w-full p-2 border border-gray-300 rounded focus:ring-2 focus:ring-blue-600'
               required
             />
